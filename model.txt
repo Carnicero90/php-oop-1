@@ -1,0 +1,9 @@
+Campi:
+
+    name -> str # nome dell'utente
+    lastname -> str # cognome dell'utente
+    email -> str # mail utente
+    validated_email -> bool # true se mail validata, default = false
+    nickname -> str # nickname utente
+    premium -> bool # true se utente e' membro premium, default = false
+    created_at -> str # data creazione istanza
