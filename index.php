@@ -9,11 +9,13 @@ class User
     private $premium = false;
     private $created_at;
 
-    function __construct($email, $nickname)
+    function __construct($email, $nickname, $name=null, $lastname=null)
     {
         if (!User::isValidMail($email)) {
             die();
         }
+        $this->name = $name;
+        $this->lastname = $lastname;
         $this->email = $email;
         $this->nickname = $nickname;
         $this->created_at = date("Y-m-d H:i:s");
@@ -40,8 +42,8 @@ $users = [
     'carlito' => new User(
         $email = 'carlitoilmito@htomail.com',
         $nickname = 'carlizio',
-        $name = "Carlo",
-        $lastname = "Ancelotti"
+        $name = 'Carlo',
+        $lastname = 'Ancelotti'
     ),
     'filo' => new User(
         $email = 'fmontani81@gmail.com',
@@ -57,9 +59,7 @@ $users = [
 ];
 
 var_dump($users);
+$users['carlito']->upgradeMembership();
+var_dump($users);
 
 ?>
-
-<?php ?>
-<?php ?>
-<?php ?>
